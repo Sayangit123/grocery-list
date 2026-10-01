@@ -13,40 +13,41 @@ function Discount({
 }: DiscountProps) {
   return (
     <div>
-      {/* SUBTOTAL */}
-      <div className="flex justify-between text-sm text-slate-500">
-        <span>
+
+      <div className="flex justify-between text-sm">
+        <span className="font-medium text-slate-500">
           Subtotal
         </span>
 
-        <strong className="text-slate-800">
+        <strong className="font-black text-slate-800">
           ₹{totalPrice}
         </strong>
       </div>
 
-      {/* AUTOMATIC DISCOUNT */}
       {discountPercentage > 0 && (
-        <div className="mt-3 flex justify-between text-sm text-green-600">
-          <span>
+        <div className="mt-3 flex justify-between rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">
+
+          <span className="font-bold">
             Discount ({discountPercentage}%)
           </span>
 
           <strong>
             -₹{discountAmount}
           </strong>
+
         </div>
       )}
 
-      {/* AFTER DISCOUNT */}
-      <div className="mt-3 flex justify-between text-sm text-slate-500">
-        <span>
+      <div className="mt-3 flex justify-between text-sm">
+        <span className="font-medium text-slate-500">
           After Discount
         </span>
 
-        <strong className="text-slate-800">
+        <strong className="font-black text-slate-800">
           ₹{discountedTotal}
         </strong>
       </div>
+
     </div>
   );
 }
